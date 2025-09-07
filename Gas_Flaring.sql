@@ -88,6 +88,171 @@ CREATE TABLE staging_table (
     `Flaring Vol (million m3)` DECIMAL(15, 6)
     );
     
+    -- Look at the first few rows to understand the data
+SELECT * FROM staging_table LIMIT 5;
+
+-- See a list of unique countries
+SELECT DISTINCT Country FROM staging_table;
+
+SELECT * FROM staging_table LIMIT 5;
+
+INSERT INTO countries (country_name)
+SELECT DISTINCT Country
+FROM staging_table
+WHERE Country IS NOT NULL AND Country != ''
+LIMIT 3;
+
+SELECT * FROM countries;
+
+INSERT INTO fields (field_name, field_type, field_operator, location, latitude, longitude, country_id)
+SELECT DISTINCT
+    `Field Name`,       
+    `Field Type`,       
+    `Field Operator`,   
+    `Location`,
+    `Latitude`,
+    `Longitude`,
+    c.country_id
+FROM staging_table r 
+JOIN countries c ON r.`Country` = c.country_name
+WHERE `Field Name` IS NOT NULL
+LIMIT 3;
+
+SELECT * FROM fields;
+
+INSERT INTO flaring_events (field_id, year, flare_level, flaring_volume_million_m3, volume_bcm, volume_mmscfd)
+SELECT
+    f.field_id,          
+    `Year`,
+    `Flare Level`,      
+    `Flaring Vol (million m3)`, 
+    `bcm`,
+    `MMscfd`
+FROM staging_table r
+JOIN fields f ON r.`Field Name` = f.field_name 
+              AND r.`Latitude` = f.latitude 
+              AND r.`Longitude` = f.longitude 
+LIMIT 3;
+
+SELECT * FROM flaring_events;
+
+SELECT 
+    c.country_name,
+    f.field_name,
+    f.field_operator,
+    e.year,
+    e.flaring_volume_million_m3
+FROM flaring_events e
+JOIN fields f ON e.field_id = f.field_id
+JOIN countries c ON f.country_id = c.country_id;
+
+DESCRIBE staging_table;
+
+SELECT * FROM staging_table LIMIT 5;
+
+-- Number of total records
+SELECT COUNT(*) AS Total_Records FROM staging_table;
+
+-- The timespan of the data
+SELECT MIN(`Year`) AS Start_Year, MAX(`Year`) AS End_Year FROM staging_table;
+
+-- Number of unique countries
+SELECT COUNT(DISTINCT `Country`) AS Unique_Countries FROM staging_table;
+
+-- Total Flaring Volume by Country
+SELECT 
+    `Country`,
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume
+FROM staging_table
+GROUP BY `Country`
+ORDER BY Total_Flaring_Volume DESC;
+
+-- Total Flaring Volume by Year (Global Trend):
+SELECT 
+    `Year`,
+    SUM(`Flaring Vol (million m3)`) AS Global_Flaring_Volume
+FROM staging_table
+GROUP BY `Year`
+ORDER BY `Year`;
+
+-- Top 10 Highest Flaring Fields/Operations:
+SELECT 
+    `Field Name`,
+    `Field Operator`,
+    `Country`,
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume
+FROM staging_table
+GROUP BY `Field Name`, `Field Operator`, `Country`
+ORDER BY Total_Flaring_Volume DESC
+LIMIT 10;
+
+-- 1. Trend: Global Flaring Over Time
+SELECT 
+    `Year`,
+    SUM(`Flaring Vol (million m3)`) AS Global_Flaring_Volume
+FROM staging_table
+GROUP BY `Year`
+ORDER BY `Year`;
+
+-- 2. Geography: Top Flaring Countries & Ranking Change
+-- a) Top Countries (e.g., for the most recent year):
+SELECT 
+    `Country`,
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume
+FROM staging_table
+WHERE `Year` = (SELECT MAX(`Year`) FROM staging_table) -- 
+GROUP BY `Country`
+ORDER BY Total_Flaring_Volume DESC
+LIMIT 10;
+
+-- b) Ranking Change Over Time:
+SELECT 
+    `Year`,
+    `Country`,
+    SUM(`Flaring Vol (million m3)`) AS Yearly_Flaring_Volume
+FROM staging_table
+GROUP BY `Year`, `Country`
+ORDER BY `Year`, Yearly_Flaring_Volume DESC;
+
+-- 3. Operators: Top Flaring Companies
+SELECT 
+    `Field Operator`,
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume
+FROM staging_table
+WHERE `Field Operator` IS NOT NULL 
+  AND `Field Operator` != ''
+GROUP BY `Field Operator`
+ORDER BY Total_Flaring_Volume DESC
+LIMIT 15;
+
+-- 4. Field Level: "Super Emitter" Fields
+SELECT 
+    `Field Name`,
+    `Country`,
+    `Field Operator`,
+    AVG(`Flaring Vol (million m3)`) AS Avg_Annual_Flaring, -- Finds consistently high flarers
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume -- Finds all-time highest flarers
+FROM staging_table
+WHERE `Field Name` IS NOT NULL 
+  AND `Field Name` != ''
+GROUP BY `Field Name`, `Country`, `Field Operator`
+ORDER BY Avg_Annual_Flaring DESC
+LIMIT 20;
+
+-- 5. Correlation: Flaring by Field Type
+SELECT 
+    `Field Type`,
+    AVG(`Flaring Vol (million m3)`) AS Avg_Flaring_Volume,
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume,
+    COUNT(*) AS Number_of_Records
+FROM staging_table
+WHERE `Field Type` IS NOT NULL 
+  AND `Field Type` != ''
+GROUP BY `Field Type`
+ORDER BY Total_Flaring_Volume DESC;
+
+
+    
     
 
 
