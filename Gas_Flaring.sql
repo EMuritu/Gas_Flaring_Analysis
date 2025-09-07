@@ -96,6 +96,7 @@ SELECT DISTINCT Country FROM staging_table;
 
 SELECT * FROM staging_table LIMIT 5;
 
+-- Insert data into countries table
 INSERT INTO countries (country_name)
 SELECT DISTINCT Country
 FROM staging_table
@@ -104,6 +105,7 @@ LIMIT 3;
 
 SELECT * FROM countries;
 
+-- Insert data into fields table
 INSERT INTO fields (field_name, field_type, field_operator, location, latitude, longitude, country_id)
 SELECT DISTINCT
     `Field Name`,       
@@ -120,6 +122,7 @@ LIMIT 3;
 
 SELECT * FROM fields;
 
+-- Insert data into flaring_events table
 INSERT INTO flaring_events (field_id, year, flare_level, flaring_volume_million_m3, volume_bcm, volume_mmscfd)
 SELECT
     f.field_id,          
@@ -146,6 +149,7 @@ FROM flaring_events e
 JOIN fields f ON e.field_id = f.field_id
 JOIN countries c ON f.country_id = c.country_id;
 
+-- Inspect Data
 DESCRIBE staging_table;
 
 SELECT * FROM staging_table LIMIT 5;
@@ -195,7 +199,7 @@ GROUP BY `Year`
 ORDER BY `Year`;
 
 -- 2. Geography: Top Flaring Countries & Ranking Change
--- a) Top Countries (e.g., for the most recent year):
+-- a) Top Countries (for the most recent year):
 SELECT 
     `Country`,
     SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume
@@ -230,8 +234,8 @@ SELECT
     `Field Name`,
     `Country`,
     `Field Operator`,
-    AVG(`Flaring Vol (million m3)`) AS Avg_Annual_Flaring, -- Finds consistently high flarers
-    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume -- Finds all-time highest flarers
+    AVG(`Flaring Vol (million m3)`) AS Avg_Annual_Flaring, -- consistently high flarers
+    SUM(`Flaring Vol (million m3)`) AS Total_Flaring_Volume -- all-time highest flarers
 FROM staging_table
 WHERE `Field Name` IS NOT NULL 
   AND `Field Name` != ''
