@@ -28,9 +28,9 @@ This interactive dashboard explores global trends, identifies top-flaring countr
 ## 5.Key Insights 
 
 ## 6.Recommendations
-1.  **Targeted International Policy:** Focus diplomatic and technical assistance efforts on the top-flaring countries identified in the analysis. A one-size-fits-all global approach is less effective than targeted action.
-2.  **Corporate Accountability:** Investors and advocacy groups should use this data to directly engage with the major flaring operators identified to encourage adoption of best practices and transparency in reporting.
-3.  **Technology for Remote Operations:** The high flaring intensity in offshore fields underscores a need for greater investment in technologies that can capture and utilize gas in remote or offshore environments, where infrastructure is a constraint.
-4.  **Continuous Monitoring:** Regulators and NGOs should adopt transparent monitoring of progress against flaring reduction commitments like the World Bank's Zero Routine Flaring by 2030 initiative
+*  **Targeted International Policy:** Focus diplomatic and technical assistance efforts on the top-flaring countries identified in the analysis. A one-size-fits-all global approach is less effective than targeted action.
+*  **Corporate Accountability:** Investors and advocacy groups should use this data to directly engage with the major flaring operators identified to encourage adoption of best practices and transparency in reporting.
+* **Technology for Remote Operations:** The high flaring intensity in offshore fields underscores a need for greater investment in technologies that can capture and utilize gas in remote or offshore environments, where infrastructure is a constraint.
+*  **Continuous Monitoring:** Regulators and NGOs should adopt transparent monitoring of progress against flaring reduction commitments like the World Bank's Zero Routine Flaring by 2030 initiative
 
 
