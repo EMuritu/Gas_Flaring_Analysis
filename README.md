@@ -9,4 +9,11 @@ This project leverages the World Bank’s gas flaring dataset to explore histori
 ## 2. Problem Statement
 According to a report published by the International Energy Agency(2024), around 139 billion cubic meters (bcm) of natural gas was flared globally; equivalent to the entire annual gas consumption of sub-Saharan Africa, resulting in approximately 500 million tonnes of CO₂-equivalent emissions. Despite growing awareness and international commitments to reduce emissions, gas flaring levels remain persistently high in several countries. 
 
-This project aims to bridge the gap between raw satellite data and actionable insights through visualization and exploratory data analysis. The ultimate goal is to highlight opportunities for sustainable energy practices and contribute to ongoing global reduction efforts
+This project aims to bridge the gap between raw satellite data and actionable insights through visualization and exploratory data analysis. The ultimate goal is to highlight opportunities for sustainable energy practices and contribute to ongoing global reduction efforts.
+
+## 3. Methods Used
+*   **Data Wrangling:** Initial inspection and cleaning was performed in **Excel**
+*   **Database Engineering:** A normalized relational database was designed and implemented in **MySQL**
+*   **Data Analysis:** Complex analytical queries were written in **SQL** to aggregate data and uncover trends
+*   **Data Visualization:** **Tableau** was connected directly to the database to build an interactive dashboard for exploration and storytelling
+*   **Tools:** MySQL, Tableau, Excel, Lucidchart
