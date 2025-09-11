@@ -15,5 +15,5 @@ This project aims to bridge the gap between raw satellite data and actionable in
 *   **Data Wrangling:** Initial inspection and cleaning was performed in **Excel**
 *   **Database Engineering:** A normalized relational database was designed and implemented in **MySQL**
 *   **Data Analysis:** Complex analytical queries were written in **SQL** to aggregate data and uncover trends
-*   **Data Visualization:** **Tableau** was connected directly to the database to build an interactive dashboard for exploration and storytelling
+*   **Data Visualization:** **Tableau** was incorporated to build an interactive dashboard for exploration and storytelling
 *   **Tools:** MySQL, Tableau, Excel, Lucidchart
