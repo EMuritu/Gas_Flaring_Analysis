@@ -20,4 +20,5 @@ This project aims to bridge the gap between raw satellite data and actionable in
 
 ## 4. Results
 ### Entity-Relationship Diagram (ERD)
-The database was designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: `countries`, `fields`, and `flaring_events`, linked through foreign keys
+The database was designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: countries, fields and flaring_events linked through foreign keys
+
