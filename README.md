@@ -7,6 +7,6 @@ The World Bank’s Global Gas Flaring Reduction (GGFR) Partnership provides publ
 This project leverages the World Bank’s gas flaring dataset to explore historical trends, geographic patterns and correlations with oil production and policy interventions.
 
 ## 2. Problem Statement
-According to a report published by the International Energy Agency(2024), around 139 billion cubic meters (bcm) of natural gas was flared globally—equivalent to the entire annual gas consumption of sub-Saharan Africa, resulting in approximately 500 million tonnes of CO₂-equivalent emissions.Despite growing awareness and international commitments to reduce emissions, gas flaring levels remain persistently high in several countries. 
+According to a report published by the International Energy Agency(2024), around 139 billion cubic meters (bcm) of natural gas was flared globally;equivalent to the entire annual gas consumption of sub-Saharan Africa, resulting in approximately 500 million tonnes of CO₂-equivalent emissions. Despite growing awareness and international commitments to reduce emissions, gas flaring levels remain persistently high in several countries. 
 
 This project aims to bridge the gap between raw satellite data and actionable insights through visualization and exploratory data analysis. The ultimate goal is to highlight opportunities for sustainable energy practices and contribute to ongoing global reduction efforts
