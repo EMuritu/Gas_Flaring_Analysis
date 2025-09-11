@@ -11,7 +11,7 @@ According to a report published by the International Energy Agency(2024), around
 
 This project aims to bridge the gap between raw satellite data and actionable insights through visualization and exploratory data analysis. The ultimate goal is to highlight opportunities for sustainable energy practices and contribute to ongoing global reduction efforts.
 
-## 3. Methods Used
+## 3. Methodology
 *   **Data Wrangling:** Initial inspection and cleaning was performed in **Excel**
 *   **Database Engineering:** A normalized relational database was designed and implemented in **MySQL**
 *   **Data Analysis:** Complex analytical queries were written in **SQL** to aggregate data and uncover trends
@@ -20,10 +20,10 @@ This project aims to bridge the gap between raw satellite data and actionable in
 
 ## 4. Results
 ### Entity-Relationship Diagram (ERD)
-The database was designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: countries, fields and flaring_events linked through foreign keys
+The database is designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: countries, fields and flaring_events linked through foreign keys
 
 ### Tableau Dashboard
-The interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
+This interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
 
 
 
