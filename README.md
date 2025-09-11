@@ -17,3 +17,7 @@ This project aims to bridge the gap between raw satellite data and actionable in
 *   **Data Analysis:** Complex analytical queries were written in **SQL** to aggregate data and uncover trends
 *   **Data Visualization:** **Tableau** was incorporated to build an interactive dashboard for exploration and storytelling
 *   **Tools:** MySQL, Tableau, Excel, Lucidchart
+
+## 4. Results
+### Entity-Relationship Diagram (ERD)
+The database was designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: `countries`, `fields`, and `flaring_events`, linked through foreign keys
