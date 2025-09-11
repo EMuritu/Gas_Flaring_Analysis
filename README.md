@@ -25,5 +25,10 @@ The database is designed with normalization principles to efficiently store and 
 ### Tableau Dashboard
 This interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
 
+## 5.Key Insights 
+
+## 6.Recommendations
+
+
 
 
