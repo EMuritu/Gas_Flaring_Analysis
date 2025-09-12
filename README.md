@@ -20,6 +20,7 @@ This project aims to bridge the gap between raw satellite data and actionable in
 ### Entity-Relationship Diagram (ERD)
 The database is designed with normalization principles to efficiently store and relate data. The schema consists of three main tables: countries, fields and flaring_events linked through foreign keys
 
+
 ### Tableau Dashboard
 This interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
 
