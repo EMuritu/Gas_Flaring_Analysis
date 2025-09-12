@@ -4,8 +4,6 @@ Gas flaring is the controlled burning of natural gas that is released during the
 
 The World Bank’s Global Gas Flaring Reduction (GGFR) Partnership provides publicly available, satellite-based estimates of gas flaring by country and oil production site. This dataset offers a valuable opportunity to examine global trends, identify high-flaring regions and assess the effectiveness of reduction initiatives.
 
-This project leverages the World Bank’s gas flaring dataset to explore historical trends, geographic patterns and correlations with oil production and policy interventions.
-
 ## 2. Problem Statement
 According to a report published by the International Energy Agency(2024), around 139 billion cubic meters (bcm) of natural gas was flared globally; equivalent to the entire annual gas consumption of sub-Saharan Africa, resulting in approximately 500 million tonnes of CO₂ equivalent emissions. Despite growing awareness and international commitments to reduce emissions, gas flaring levels remain persistently high in several countries. 
 
