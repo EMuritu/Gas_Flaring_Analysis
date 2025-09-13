@@ -24,7 +24,11 @@ The database is designed with normalization principles to efficiently store and 
 This interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
 
 ## 5.Key Insights 
-
+*  **Persistent Global Challenge:** Gas flaring remains a significant issue. Global volumes show a volatile trend, heavily influenced by oil production cycles in key regions.
+*  **Geographic Concentration:** Just five countries account for over half of the total global flaring volume, indicating that the problem is highly concentrated.
+*  **Identifiable Major Contributors:** The analysis successfully identifies the specific companies and oil fields that are the largest contributors to flaring activity.
+*  **Operational Correlation:** oil fields, on average, indicate a higher flaring intensity compared to gas and LNG fields, suggesting unique logistical challenges.
+  
 ## 6.Recommendations
 *  **Targeted International Policy:** Focus diplomatic and technical assistance efforts on the top-flaring countries identified in the analysis. A one-size-fits-all global approach is less effective than targeted action.
 *  **Corporate Accountability:** Investors and advocacy groups should use this data to directly engage with the major flaring operators identified to encourage adoption of best practices and transparency in reporting.
