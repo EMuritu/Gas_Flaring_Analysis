@@ -22,7 +22,7 @@ The database is designed with normalization principles to efficiently store and 
 ![ERD Diagram](Gas_Flaring_ERD.png)
 ### Tableau Dashboard
 This interactive dashboard explores global trends, identifies top-flaring countries and operators and analyzes flaring by field type.
-![Dashboard Preview](Dashboard%201.png)
+![Dashboard Preview](Gas_Flaring_Dashboard.png))
 
 ## 5.Key Insights 
 *  **Persistent Global Challenge:** Gas flaring remains a significant issue. Global volumes show a volatile trend, heavily influenced by oil production cycles in key regions.
